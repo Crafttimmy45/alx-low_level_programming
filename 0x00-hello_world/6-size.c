@@ -1,16 +1,15 @@
 #include <stdio.h>
 /**
- * main - A program that prins the size of various computer types
+ * main -A program that prins the size of various computer types
  * Return: 0 (Success)
  */
 int main(void)
 {
 	char a;
-	int b'
+	int b;
 	long int c;
 	long long int d;
 	float f;
-
 printf("Size of a char: %i byte(s)\n", sizeof(char));
 printf("Size of an int: %i byte(s)\n", sizeof(int));
 printf("Size of a long int: %i byte(s)\n"' sizeof(long int));
