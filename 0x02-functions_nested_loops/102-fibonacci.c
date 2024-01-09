@@ -7,22 +7,23 @@
  */
 int main(void)
 {
-	int i + 0;
-	long int a = 0, b = 1, next;
+	long int i, j, k, next;
 
-	while (i < 50)
+	j = 1;
+	k = 2;
+
+	for (i = 1; i <= 50; ++i)
 	{
-		next = a + b;
-		a = b;
-		b = next;
-		printf("%lu", next);
-
-		if (i < 49)
+		if (j != 20365011074)
 		{
-			printf(",");
+			printf("%ld, ", j);
+		} else
+		{
+			ptintf("%ld\n", j);
 		}
-		i++;
+		next = j + k;
+		j = k;
+		k = next;
 	}
-	putchar('\n');
 	return (0);
 }
