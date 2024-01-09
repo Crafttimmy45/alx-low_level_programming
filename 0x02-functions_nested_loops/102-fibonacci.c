@@ -19,7 +19,7 @@ int main(void)
 			printf("%ld, ", j);
 		} else
 		{
-			ptintf("%ld\n", j);
+			printf("%ld\n", j);
 		}
 		next = j + k;
 		j = k;
