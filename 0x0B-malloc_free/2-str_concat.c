@@ -1,14 +1,14 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings
+ * _strlen - length of a string
  * @s: input char
  * Return: length of a string
  */
 int _strlen(char *s)
 {
 	int l = 0;
+
 	while (*s != '\0')
 	{
 		s++;
@@ -26,15 +26,17 @@ int _strlen(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	unsigned int l1, l2;
-	char *conc, * tmp;
+	char *conc, *tmp;
 
 	if (!s1)
 		s1 = "";
-	else l1 = _strlen(s1);
+	else
+		l1 = _strlen(s1);
 
 	if (!s2)
 		s2 = "";
-	else l2 = _strlen(s2);
+	else
+		l2 = _strlen(s2);
 
 	conc = malloc(l1 + l2 + 1);
 	if (!conc)
@@ -42,7 +44,7 @@ char *str_concat(char *s1, char *s2)
 
 	tmp = conc;
 	while (*s1)
-		*tmp++ = *s1 ++;
+		*tmp++ = *s1++;
 
 	while ((*tmp++ = *s2++))
 		;
