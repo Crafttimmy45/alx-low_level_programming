@@ -2,43 +2,50 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings.
- * @s1: first string.
- * @s2: second string.
- * Return: pointer of an array of chars
+ * str_concat - concatenates two strings
+ * @s: input char
+ * Return: length of a string
+ */
+int _strlen(char *s)
+{
+	int l = 0;
+	while (*s != '\0')
+	{
+		s++;
+		l++;
+	}
+	return (l);
+}
+
+/**
+ * str_concat - concat 2 strings.
+ * @s1: string
+ * @s2: string
+ * Return: char
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *s3;
-	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
+	unsigned int l1, l2;
+	char *conc, * tmp;
 
-	while (s1 && s2[len2])
-		len2++;
-	s3 = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (s3 == NULL)
-		return (NULL);
+	if (!s1)
+		s1 = "";
+	else l1 = _strlen(s1);
 
-	i = 0;
-	j = 0;
+	if (!s2)
+		s2 = "";
+	else l2 = _strlen(s2);
 
-	if (s1)
-	{
-		while (i < len1)
-		{
-			s3[i] = s1[i];
-			i++;
-		}
-	}
-	if (s2)
-	{
-		while (i < (len1 + len2))
-		{
-			s3[i] = s2[j];
-			i++;
-			j++;
-		}
-	}
-	s3[i] = '\0';
+	conc = malloc(l1 + l2 + 1);
+	if (!conc)
+		return (0);
 
-	return (s3);
+	tmp = conc;
+	while (*s1)
+		*tmp++ = *s1 ++;
+
+	while ((*tmp++ = *s2++))
+		;
+
+	return (conc);
 }
