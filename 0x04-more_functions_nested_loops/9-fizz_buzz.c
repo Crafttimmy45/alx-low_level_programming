@@ -2,14 +2,14 @@
 #include "main.h"
 
 /**
- * main - Fizz for multiples of 3 and Buzz for multtiples of 5 FizzBuzz for both
+ * main - prints Buzz each numbers of 3 and 5
  *
- * Return: void
+ * Return: 0
  */
 int main(void)
 {
 	int a;
-	
+
 	for (a = 1; a <= 100; a++)
 	{
 		if (a % 3 == 0 && a % 5 != 0)
