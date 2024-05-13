@@ -3,47 +3,21 @@
 
 /**
  * print_buffer - prints a buffer
- * @b:nbuffer
+ * @b:buffer
  * @size: size of buffer
  * Return: void
  */
 void print_buffer(char *b, int size)
 {
-	int g, h, i;
+	int g, h;
 
-	g = 0;
-
-	if (size <= 0)
+	for (g = 0; g < size; g += 10)
 	{
-		printf("\n");
-		return;
-	}
-	while (g < size)
-	{
-		h = size - g < 10 ? size - g : 10;
-		printf("%8x: ", g);
-		for (i = 0; i < 10; i++)
-		{
-			if (i < h)
-				printf("%02x", *(b + g + i));
-			else
-				printf(" ");
-			if (i % 2)
-			{
-				printf(" ");
-			}
-		}
-		for (i = 0; i < h; i++)
-		{
-			int c = *(b + g + i);
+		printf("%08x: ", g);
 
-			if (c < 32 || c > 132)
-			{
-				c = '.';
-			}
-			printf("%c", c);
+		for (h = 0; h < 10; h++)
+		{
+			if ((h +
 		}
-		printf("\n");
-		g += 10;
 	}
 }
